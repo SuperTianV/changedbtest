@@ -1,9 +1,9 @@
 --liquibase formatted sql
---changeset mahaoyu:1.2 splitStatements:false
+--changeset zhangsan:1.2 splitStatements:false
 CREATE TRIGGER book_trigger AFTER INSERT ON book FOR EACH ROW BEGIN
   INSERT INTO test (`name`) VALUES ('1');
 END;
---changeset mahaoyu:1.3 splitStatements:false
+--changeset zhangsan:1.3 splitStatements:false
 CREATE PROCEDURE `proc_adder` ( IN a INT, IN b INT, OUT sum INT ) BEGIN
 	DECLARE
 		c INT;
@@ -17,9 +17,9 @@ CREATE PROCEDURE `proc_adder` ( IN a INT, IN b INT, OUT sum INT ) BEGIN
 	END IF;
 	SET sum = a + b;
 END;
---changeset mahaoyu:1.4
+--changeset zhangsan:1.4
 CREATE VIEW Oceania AS SELECT * FROM book;
---changeset mahaoyu:1.5 splitStatements:false
+--changeset zhangsan:1.5 splitStatements:false
 CREATE FUNCTION hello ( ) RETURNS VARCHAR ( 255 ) BEGIN
 RETURN 'Hello  world,i am mysql';
 END;
